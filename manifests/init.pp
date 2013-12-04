@@ -96,8 +96,11 @@ class clamav (
    $user                           = "clamav"
 ) {
    # Parameter Validation
-   $supported_minimum_os_versions   = { "Ubuntu" => 10.04 }
-   $supported_operatingsystems      = [ "Ubuntu" ]
+   $supported_minimum_os_versions   = { 
+    "Ubuntu" => 10.04,
+    "Debian" => 7.2
+   }
+   $supported_operatingsystems      = [ "Ubuntu","Debian" ]
    $valid_ensure_values             = [ "present", "absent" ]
 
    if ! ($::operatingsystem in $supported_operatingsystems) {
